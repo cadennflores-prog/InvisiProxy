@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Research Module</title>
+    <style>
+        body { background: #111; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .box { text-align: center; border: 1px solid #333; padding: 50px; border-radius: 15px; background: #1a1a1a; }
+        .launch-btn { background: #007bff; color: white; border: none; padding: 15px 30px; border-radius: 5px; cursor: pointer; font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Secure Terminal</h2>
+        <p>Simulation Status: Ready</p>
+        <button class="launch-btn" onclick="startProxy()">Initialize Roblox</button>
+    </div>
+
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script>
+        function startProxy() {
+            const url = "https://now.gg/apps/roblox-corporation/1316/roblox.html";
+            
+            // This is the magic part: It tells InvisiProxy to encode the URL
+            // so the school filter doesn't know you're playing Roblox.
+            window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+        }
+    </script>
+</body>
+</html>
